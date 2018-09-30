@@ -34,8 +34,6 @@ module.exports = function (command) {
         number = comma[1];
         return removePhone(number, phoneBook);
     }
-
-
     //создадим функции дйствий
     // ADD
     function addContact(contact, namber) {
@@ -46,12 +44,8 @@ module.exports = function (command) {
             for (var i = 0; i < book.length; i++) {
                 if (i == book.length - 1) note += book[i];
                 else note += book[i] + ", ";
-
             }
-
-
         } else {
-
             note = contact + ": " + namber;
         }
         phoneBook.push(note);
@@ -59,7 +53,6 @@ module.exports = function (command) {
     // 
     function addContactEqual(contact, namber, phoneBook) {
         for (var i = 0; i < phoneBook.length; i++) {
-
             var nameIn = phoneBook[i].split(":")
             if (contact == nameIn[0]) {
                 phoneBook[i] = phoneBook[i] + ", " + namber;
@@ -81,20 +74,15 @@ module.exports = function (command) {
                 newstr = newstr.replace(" ,", "");
                 // убираем строку в массиве со старым номером
                 phoneBook[i] = newstr;
-
             }
-
             return true;
         }
         return false;
-
     }
     // возврощает true при нахождении одинакового номера в книге
     function filterNumber(number) {
         for (var i = 0; i < phoneBook.length; i++) {
             if (number == phoneBook[i].match(number)) return true;
-
-
         }
         return false;
     }
